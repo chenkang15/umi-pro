@@ -8,11 +8,6 @@
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
