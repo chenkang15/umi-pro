@@ -10,10 +10,8 @@
     "eslint": "eslint --ext .tsx,.ts --fix ./src",
     "test:coverage": "umi-test --coverage"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+  "gitHooks": {
+    "pre-commit": "lint-staged"
   },
   "lint-staged": {
     "*.{js,jsx,less,md,json}": [
