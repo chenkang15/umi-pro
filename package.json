@@ -6,7 +6,13 @@
     "postinstall": "umi generate tmp",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
+    "lint-staged": "lint-staged",
     "test:coverage": "umi-test --coverage"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -34,5 +40,8 @@
     "react-dom": "^16.12.0",
     "umi": "^3.2.19",
     "yorkie": "^2.0.0"
+  },
+  "devDependencies": {
+    "husky": "^4.2.5"
   }
 }
