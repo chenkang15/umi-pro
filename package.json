@@ -21,8 +21,7 @@
     ],
     "*.ts?(x)": [
       "npm run eslint",
-      "prettier --parser=typescript --write",
-      
+      "prettier --parser=typescript --write"
     ]
   },
   "dependencies": {
