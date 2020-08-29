@@ -6,8 +6,6 @@
     "postinstall": "umi generate tmp",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
-    
-    "eslint": "eslint --ext .tsx,.ts --fix ./src",
     "test:coverage": "umi-test --coverage"
   },
   "husky": {
@@ -17,12 +15,12 @@
   },
   "lint-staged": {
     "*.{js,jsx,less,md,json}": [
-      "prettier --write"
+      "prettier --write",
+      "eslint"
     ],
     "*.ts?(x)": [
-      "npm run eslint",
       "prettier --parser=typescript --write",
-      
+      "eslint"
     ]
   },
   "dependencies": {
