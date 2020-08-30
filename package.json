@@ -10,6 +10,11 @@
     "eslint": "eslint --ext .tsx,.ts --fix ./src",
     "test:coverage": "umi-test --coverage"
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
@@ -42,6 +47,8 @@
     "yorkie": "^2.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^9.1.2",
+    "@commitlint/config-conventional": "^9.1.2",
     "husky": "^4.2.5",
     "prettier": "^1.19.1",
     "typescript": "^4.0.2"
