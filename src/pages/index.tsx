@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './index.less';
-const Test: React.FC<{ a: number }> = ({ a }): React.ReactNode => {
+const Test: React.FC<{ abc: number }> = ({ abc }): React.ReactNode => {
     return <div>{a}</div>
 }
 const App = (): React.ReactNode => {
