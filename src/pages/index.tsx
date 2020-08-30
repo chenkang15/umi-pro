@@ -4,7 +4,7 @@ const Test: React.FC<{ abc: number }> = ({ abc }): React.ReactNode => {
     return <div>{a}</div>
 }
 const App = (): React.ReactNode => {
-    if (1) { }
+    if (1) { console.error("haha")}
     return <Test a={1} a={2}>test</Test>;
 };
 export default App;
