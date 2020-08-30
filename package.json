@@ -8,6 +8,7 @@
     "test": "umi-test",
     "lint-staged": "lint-staged",
     "eslint": "eslint --ext .tsx,.ts --fix ./src",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0",
     "test:coverage": "umi-test --coverage"
   },
   "husky": {
@@ -35,6 +36,7 @@
     "@umijs/preset-react": "1.x",
     "@umijs/test": "^3.2.19",
     "babel-eslint": "^10.1.0",
+    "conventional-changelog": "^3.1.23",
     "eslint": "^7.7.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-jsx-control-statements": "^2.2.1",
