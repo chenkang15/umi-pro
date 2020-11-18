@@ -2,6 +2,10 @@
     display: flex;
     user-select: none;
     :global {
+        .header-cell {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
         .react-resizable {
             position: relative;
             background-clip: padding-box;
@@ -17,3 +21,11 @@
           }
     }
 }
+
+  :global {
+    html,body,  #root {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+  }

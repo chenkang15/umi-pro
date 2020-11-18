@@ -9,9 +9,7 @@ import styles from './Table.less'
 const HeaderCell = props => {
     const { onResize, width, ...restProps } = props;
 
-    if (!width) {
-        return <th {...restProps} />;
-    }
+
 
     console.log(restProps);
 
@@ -30,7 +28,7 @@ const HeaderCell = props => {
             onResize={onResize}
             draggableOpts={{ enableUserSelectHack: false }}
         >
-            <div {...restProps} style={{ width }} />
+            <div {...restProps} style={{ width }} className="header-cell"/>
         </Resizable>
     );
 };

@@ -1,6 +1,7 @@
 import React, { FC, useMemo, useState } from 'react'
 import ResizeObserver from 'rc-resize-observer';
 import { Resizable } from 'react-resizable';
+import { SizeMe } from 'react-sizeme'
 import TableHeader from './TableHeader';
 interface ITable { }
 
@@ -56,8 +57,25 @@ const data = [
         note: 'transfer',
     },
 ];
+/* 
+容器宽度小于 给定 宽度
+columns 存在 未定义width，或者width=0
+*/
+const initColumns = (params) => {
+    const {width } = params
+    const columns = columnsConf
+    const noWidthlen = columns.filter(it => !parseFloat(it.width)).length
+    const varWidth = columns.reduce((pre, cur) => pre + cur.width || 0, 0)
+
+    const widthDiff = width - varWidth
+    if (1) {
+
+    }
+    
+}
 const Table: FC<ITable> = () => {
     const [columns, setColumns] = useState(columnsConf)
+    const [size, setSize] = useState({})
     // const _columns = useMemo(() => {
     //     return columns
     // }, [JSON.stringify(columns)])
