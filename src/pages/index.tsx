@@ -1,10 +1,20 @@
 import React from 'react';
 import styles from './index.less';
-const Test: React.FC<{ abc: number }> = ({ abc }): React.ReactNode => {
-    return <div>{a}</div>
+interface ITest {
+    abc: number;
+    onClick?: () => void;
 }
-const App = (): React.ReactNode => {
-    if (1) { console.error("haha", 123)}
-    return <Test a={1} a={2}>test</Test>;
+const Test: React.SFC<ITest> = ({ abc }): React.ReactElement => {
+    return <div>{abc}</div>;
+};
+const App: React.FC<Record<string, unknown>> = (props): React.ReactElement => {
+    console.log('???');
+    
+    if (props.children) {
+        console.log('haha', 123, 456);
+    }
+    return (
+        <div>123</div>
+    );
 };
 export default App;

@@ -1,69 +1,42 @@
 module.exports = {
-    parser: '@typescript-eslint/parser', // Specifies the ESLint parser
+    parser: '@typescript-eslint/parser',
+    plugins: ['@typescript-eslint/eslint-plugin'],
     extends: [
-        "airbnb-base",
-        'plugin:@typescript-eslint/recommended', // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+        'eslint:recommended',
         'plugin:react/recommended',
-        'plugin:jsx-control-statements/recommended',
-        'prettier/@typescript-eslint', // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
-        'plugin:prettier/recommended', // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
-        'prettier/react'
     ],
-    "settings": {
-        "react": {
-            "version": "detect",
-        }
+    settings: {
+        react: {
+            version: 'detect',
+        },
     },
-    plugins: ['@typescript-eslint', 'react', 'jsx-control-statements', 'prettier'],
     env: {
-        browser: true,
-        node: true,
-        es6: true,
-        mocha: true,
-        'jsx-control-statements/jsx-control-statements': true
+        // æ‚¨çš„ç¯å¢ƒå˜é‡ï¼ˆåŒ…å«å¤šä¸ªé¢„å®šä¹‰çš„å…¨å±€å˜é‡ï¼‰
+        // Your environments (which contains several predefined global variables)
+        //
+        // browser: true,
+        // node: true,
+        // mocha: true,
+        // jest: true,
+        // jquery: true
     },
     globals: {
-        $: true
+        // æ‚¨çš„å…¨å±€å˜é‡ï¼ˆè®¾ç½®ä¸º false è¡¨ç¤ºå®ƒä¸å…è®¸è¢«é‡æ–°èµ‹å€¼ï¼‰
+        // Your global variables (setting to false means it's not allowed to be reassigned)
+        //
+        // myGlobal: false
     },
     rules: {
-        'prettier/prettier': 1,
-        'no-console': ['warn', { allow: ['warn', 'error'] }],
-        "eqeqeq": ['warn', 'always'],
-        "prefer-const": ['error', { "destructuring": "all", "ignoreReadBeforeAssign": true }],
-        '@typescript-eslint/indent': ['error', 4, { VariableDeclarator: 4, SwitchCase: 1 }],
-        '@typescript-eslint/no-unused-vars': 0,
-        "@typescript-eslint/interface-name-prefix": 0,
-        "@typescript-eslint/explicit-member-accessibility": 0,
-        "@typescript-eslint/no-triple-slash-reference": 0,
-        "@typescript-eslint/ban-ts-ignore": 0,
-        "@typescript-eslint/no-this-alias": 0,
-        "@typescript-eslint/triple-slash-reference": ['error', { "path": "always", "types": "never", "lib": "never" }],
-        // ReactÏà¹ØĞ£Ñé¹æÔò
-        "react/jsx-indent": [2, 4],
-        "react/jsx-no-undef": [2, { allowGlobals: true }],
-        "jsx-control-statements/jsx-use-if-tag": 0,
-        'react/jsx-key': 2, //ÔÚÊı×é»òµü´úÆ÷ÖĞÑéÖ¤JSX¾ßÓĞkeyÊôĞÔ
-        'react/jsx-max-props-per-line': [1, { maximum: 1 }], // ÏŞÖÆJSXÖĞµ¥ĞĞÉÏµÄpropsµÄ×î´óÊıÁ¿
-        'react/jsx-no-duplicate-props': 2, //·ÀÖ¹ÔÚJSXÖĞÖØ¸´µÄprops
-        'react/jsx-no-undef': 1, //ÔÚJSXÖĞ½ûÖ¹Î´ÉùÃ÷µÄ±äÁ¿
-        'react/no-string-refs': 1, //Using string literals in ref attributes is deprecated
-        'react/jsx-uses-react': 1, //·ÀÖ¹·´Ó¦±»´íÎóµØ±ê¼ÇÎªÎ´Ê¹ÓÃ
-        'react/jsx-uses-vars': 1, //·ÀÖ¹ÔÚJSXÖĞÊ¹ÓÃµÄ±äÁ¿±»´íÎóµØ±ê¼ÇÎªÎ´Ê¹ÓÃ
-        'react/no-danger': 1, //·ÀÖ¹Ê¹ÓÃÎ£ÏÕµÄJSXÊôĞÔ
-        'react/no-did-update-set-state': 2, //·ÀÖ¹ÔÚcomponentDidUpdateÖĞÊ¹ÓÃsetState
-        'react/no-did-mount-set-state': 0, //·ÀÖ¹ÔÚcomponentDidUpdateÖĞÊ¹ÓÃsetState
-        'react/no-direct-mutation-state': 2, //·ÀÖ¹this.state¸³Öµ
-        'react/no-unknown-property': 2, //·ÀÖ¹Ê¹ÓÃÎ´ÖªµÄDOMÊôĞÔ
-        'react/prefer-es6-class': 1, //ÎªReact×é¼şÇ¿ÖÆÖ´ĞĞES5»òES6Àà
-        'react/react-in-jsx-scope': 0, //Ê¹ÓÃJSXÊ±£¬±ØĞëÒªÒıÈëReact
-        'react/sort-comp': 0, //Ç¿ÖÆ×é¼ş·½·¨Ë³Ğò
-        'react/sort-prop-types': 0, //Ç¿ÖÆ×é¼şÊôĞÔË³Ğò
-        'react/jsx-sort-props': 1,
-        'react/no-deprecated': 1, //²»Ê¹ÓÃÆúÓÃµÄ·½·¨
-        'react/jsx-equals-spacing': 1, //ÔÚJSXÊôĞÔÖĞÇ¿ÖÆ»ò½ûÖ¹µÈºÅÖÜÎ§µÄ¿Õ¸ñ
-        'react/wrap-multilines': 0,
-        // react-hooks
-        'react-hooks/rules-of-hooks': 'error',
-        'react-hooks/exhaustive-deps': 'warn'
-    }
+        // è‡ªå®šä¹‰æ‚¨çš„è§„åˆ™
+        // Customize your rules
+        // "react/prop-types": 0,
+    },
+    parserOptions: {
+        // eslint ESLintéœ€è¦ECMAScript 5è¯­æ³•ã€‚æ‚¨å¯ä»¥ä½¿ç”¨è§£æå™¨é€‰é¡¹è¦†ç›–è¯¥è®¾ç½®ä»¥å¯ç”¨å¯¹å…¶ä»–ECMAScriptç‰ˆæœ¬ä»¥åŠJSXçš„æ”¯æŒã€‚
+        ecmaVersion: 6,
+        sourceType: 'module',
+        ecmaFeatures: {
+            jsx: true,
+        },
+    },
 };

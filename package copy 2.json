@@ -11,6 +11,12 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0",
     "test:coverage": "umi-test --coverage"
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
   "config": {
     "commitizen": {
       "path": "node_modules/cz-customizable"

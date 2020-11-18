@@ -1,2 +1,2 @@
 const a = 1;
-var b = 9
+let b = 9;

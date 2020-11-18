@@ -1,3 +1,3 @@
 export default [
-    { path: '/', component: '@/pages/index' },
+    { path: '/', component: '@/pages/index.tsx' },
   ]
